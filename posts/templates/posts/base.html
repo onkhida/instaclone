@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--CUSTOM CSS-->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <!--Just for the site window logo-->
+    <link rel="icon" href="{% static 'logo.png' %}">
+
+    <!--Cookie and Rubik google font for IG typeface-->
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Rubik&display=swap" rel="stylesheet">
+
+
+    <!--Font Awesome typeface-->
+    <script src="https://use.fontawesome.com/71b32705a1.js"></script>
+
+    <title>Instagram</title>
+</head>
+<body>
+
+    <nav>
+        <div class="site-logo">
+            <h1>Instagram</h1>
+        </div>
+
+        <div class="nav-search">
+            <input 
+                type="text" 
+                name="search" 
+                id="search" 
+                placeholder="search"
+            >
+        </div>
+
+        <div class="nav-links">
+            <ul>
+                <li
+                    {% if section == "feed" %} 
+                        class="active-section"
+                    {% endif %}
+                >
+                    <img src="{% static 'home.svg' %}" alt="Home">
+                </li>
+
+                <li
+                    {% if section == "direct" %} 
+                        class="active-section"
+                    {% endif %}
+                >
+                    <img src="{% static 'send.svg' %}" alt="Direct">
+                </li>
+
+                <li
+                    {% if section == "explore" %} 
+                        class="active-section"
+                    {% endif %}
+                >
+                    <img src="{% static 'explore.svg' %}" alt="Explore">
+                </li>
+
+                <li
+                    {% if section == "upload" %} 
+                        class="active-section"
+                    {% endif %}
+                >
+                    <img src="{% static 'upload.svg' %}" alt="Upload">
+                </li>
+
+                <li
+                    {% if section == "activity" %} 
+                        class="active-section"
+                    {% endif %}
+                >
+                    <img src="{% static 'heart.svg' %}" alt="Activity">
+                </li>
+
+                <li
+                    {% if section == "profile" %} 
+                        class="active-section"
+                    {% endif %}
+                >
+                    <img src="{% static 'profile.svg' %}" alt="Profile">
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    {% block content %}
+
+    {% endblock %}
+
+
+</body>
+</html>
