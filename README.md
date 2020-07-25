@@ -1,4 +1,4 @@
 # InstaClone
 
-Just install the files in the requirements page and you're good to go.
+Just install the packages in the requirements file and you're good to go.
 
