@@ -1,5 +1,96 @@
 {% extends 'posts/base.html' %}
 
+{% load static %}
+
 {% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--CUSTOM CSS-->
+    <link rel="stylesheet" href="../assets/styles.css">
+
+    <!--Just for the site window logo-->
+    <link rel="icon" href="../assets/logo.png">
+
+    <!--Cookie and Rubik google font for IG typeface-->
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Rubik&display=swap" rel="stylesheet">
+
+
+    <!--Font Awesome typeface-->
+    <script src="https://use.fontawesome.com/71b32705a1.js"></script>
+
+    <title>Instagram</title>
+</head>
+<body>
+
+    <!--Continuos scroll of posts-->
+    <section class="posts-scroll">
+        <div class="posts-column">
+
+            {% for post in posts %}
+            <div class="post-card">
+                <div class="post-author">
+                    <img src="{{ post.user.profiles.profile_picture.url }}" alt="">
+                    <div class="post-text">
+                        <h5>{{ post.user.username }}</h5>
+                        <p>{{ post.location}}</p>
+                    </div>
+                </div>
+
+                <img 
+                    src="{{ post.image.url }}" class="post-img"
+                >
+
+                <div class="post-captions">
+
+                    <div class="post-actions">
+                        <div class="right">
+                            <img 
+                                src="{% static 'img/heart.svg' %}" 
+                                height="24px"
+                                width="24px"
+                                alt="Like"
+                            >
+                            <img 
+                                src="{% static 'img/comments.svg' %}" 
+                                height="24px"
+                                width="24px"
+                                alt="Comment"
+                            >                        
+                        </div>
+
+                        <div class="left">
+                            <img 
+                                src="{% static 'img/save.svg' %}" 
+                                height="24px"
+                                width="24px"
+                                alt="Save"
+                            >        
+                        </div>
+
+                        
+                    </div>
+
+                    <p>
+                        <b>10,000 likes</b>
+                        <br>
+                        <b>{{ post.user }}</b>
+                        {{ post.caption }}
+                    </p>
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="suggestions-column">
+
+
+        </div>
+    </section>
 
 {% endblock %}

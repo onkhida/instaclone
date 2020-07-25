@@ -12,3 +12,4 @@ def feed(request):
     }
 
     return render(request, 'posts/feed.html', context)
+ 

@@ -1,0 +1,48 @@
+            <div class="user-profile">
+                <img src="../assets/profile-picture.png" alt="daniel.eta" height="66px">
+                <div class="text">
+                    <p>
+                        <b>daniel.eta</b>
+                        <br>
+                        Daniel Eta
+                    </p>
+                </div>
+            </div>
+
+            <div class="suggestions">
+                <p>Suggestions For You</p>
+
+                <div class="suggested-profiles">
+
+                    <!--suggested profile-->
+                        <div class="profile">
+                            <img src="../assets/profile-1.jpg" alt="ayotheboss_" height="66px">
+                            <div class="text">
+                                <p>
+                                    <b>ayotheboss_</b>
+                                    <br>
+                                    Ayo
+                                </p>
+                            </div>
+                        </div>
+                    <!--end of suggestion-->
+
+                   
+
+                    <!--suggested profile-->
+                    <div class="profile">
+                        <img src="../assets/profile-2.jpg" alt="ayotheboss_" height="66px">
+                        <div class="text">
+                            <p>
+                                <b>amysphotos</b>
+                                <br>
+                                Amy Kristbjörg
+                            </p>
+                        </div>
+
+                    </div>
+                    <!--end of suggestion-->
+
+                </div>
+                
+            </div>
