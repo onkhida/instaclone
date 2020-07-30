@@ -5,31 +5,9 @@
 {% block title %}
 Instagram
 {% endblock %}
+
+
 {% block content %}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!--CUSTOM CSS-->
-    <link rel="stylesheet" href="../assets/styles.css">
-
-    <!--Just for the site window logo-->
-    <link rel="icon" href="../assets/logo.png">
-
-    <!--Cookie and Rubik google font for IG typeface-->
-    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Rubik&display=swap" rel="stylesheet">
-
-
-    <!--Font Awesome typeface-->
-    <script src="https://use.fontawesome.com/71b32705a1.js"></script>
-
-    <title>Instagram</title>
-</head>
-<body>
-
     <!--Continuos scroll of posts-->
     <section class="posts-scroll">
         <div class="posts-column">
@@ -92,6 +70,18 @@ Instagram
 
         <div class="suggestions-column">
 
+            <div class="user-profile">
+                <img src="{{ request.user.profiles.profile_picture.url }}" alt="daniel.eta" height="66px">
+                <div class="text">
+                    <p>
+                        <b>{{ request.user.username }}</b>
+                        <br>
+                       {{ request.user.first_name }} {{ request.user.last_name }}
+                    </p>
+                </div>
+            </div>
+
+        </div>
 
         </div>
     </section>

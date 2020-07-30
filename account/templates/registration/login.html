@@ -32,6 +32,12 @@
         </div> -->
         <div class="fields">
             <!--Form Time!-->
+            
+            {% if form.errors %}
+                <small style="color: red; font-size: 10px;">
+                    Your username and password did not match
+                </small>
+            {% endif %}
             <form action="{% url 'login' %}" method="post">
                 <fieldset class="form-fieldset">
             
@@ -43,20 +49,11 @@
                         </b>
                     </legend>
 
-                    {% if form.errors %}
-                        <small style="color: red;">
-                            Your username and password did not match
-                        </small>
-                    {% endif %}
 
                     {% for field in form %}
-                    <div class="form-margin">
-                        {{ field }}
-                    </div>
-            
-                    <div class="form-margin">
-                        {{ field }}
-                    </div>
+                        <div class="form-margin">
+                            {{ field }}
+                        </div>    
                     {% endfor %}
 
                     <div class="form-margin">
@@ -68,7 +65,7 @@
                     </div>
                 </fieldset>
 
-
+                {% csrf_token %}
             </form>
         </div>
     </div>

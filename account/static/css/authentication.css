@@ -77,7 +77,12 @@ input:focus {
     padding: 5px 9px 5px 9px;
     border-radius: 4px;
     text-decoration: none;
+    cursor: pointer;
+    height: 30px;
+}
 
+a {
+    padding: 0.1rem;
 }
 
 .form-legend b h1 {
