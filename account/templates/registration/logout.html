@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--CUSTOM CSS-->
+    <link rel="stylesheet" href="{% static 'css/authentication.css' %}">
+
+    <!--Just for the site window logo-->
+    <link rel="icon" href="{% static 'img/logo.png' %}">
+
+    <!--Cookie and Rubik google font for IG typeface-->
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Rubik&display=swap" rel="stylesheet">
+
+
+    <!--Font Awesome typeface-->
+    <script src="https://use.fontawesome.com/71b32705a1.js"></script>
+
+    <title>Instagram</title>
+</head>
+<body>
+
+<section class="login-area">
+    <h1>You have been logged out!</h1>
+    <p>
+        Log back in 
+        <a href="{% url 'logout' %}">here</a>
+    </p>
+    
+</section>
+
+</body>
+</html>

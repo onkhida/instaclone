@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--CUSTOM CSS-->
+    <link rel="stylesheet" href="{% static 'css/authentication.css' %}">
+
+    <!--Just for the site window logo-->
+    <link rel="icon" href="{% static 'img/logo.png' %}">
+
+    <!--Cookie and Rubik google font for IG typeface-->
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Rubik&display=swap" rel="stylesheet">
+
+
+    <!--Font Awesome typeface-->
+    <script src="https://use.fontawesome.com/71b32705a1.js"></script>
+
+    <title>Instagram</title>
+</head>
+<body>
+
+<section class="login-area">
+    <div class="img-col">
+        <img src="{% static 'img/phone.png' %}" alt="">
+    </div>
+    <div class="login-col">
+        <!-- <div class="title">
+            <h1>Instagram</h1>
+        </div> -->
+        <div class="fields">
+            <!--Form Time!-->
+            <form action="{% url 'login' %}" method="post">
+                <fieldset class="form-fieldset">
+            
+                    <legend class="form-legend">
+                        <b>
+                            <h1>
+                                Instagram
+                            </h1>
+                        </b>
+                    </legend>
+
+                    {% if form.errors %}
+                        <small style="color: red;">
+                            Your username and password did not match
+                        </small>
+                    {% endif %}
+
+                    {% for field in form %}
+                    <div class="form-margin">
+                        {{ field }}
+                    </div>
+            
+                    <div class="form-margin">
+                        {{ field }}
+                    </div>
+                    {% endfor %}
+
+                    <div class="form-margin">
+                        <input type="submit" class="btn-light" value="Log In">
+                    </div>
+
+                    <div class="sign-up">
+                        <small>Or sign up <a class="signup-link" href="#">here</a></small>
+                    </div>
+                </fieldset>
+
+
+            </form>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
