@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    min-height: 54px;
+    background-color: rgb(255, 255, 255);
+    padding: 0 5vw 0 5vw;
+    background: #FFFFFF;
+    border-bottom: 1px solid #dbdbdb;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav .site-logo {
+    font-family: Cookie, cursive !important;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+nav .nav-links ul {
+    display: flex;
+    flex-direction: row;
+    /* border: 3px solid black; */
+    width: 222px;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+nav .nav-links ul li img{
+    height: 22px;
+    width: 22px;
+    cursor: pointer;
+}
+
+nav .nav-search input{
+    height: 28px;
+    width: 215px;
+    background-color: #fafafa;
+    border: 1px solid #dbdbdb;
+    color: #8e8e8e;
+    border-radius: 3px;
+    text-align: center;
+    font: 'Work Sans', sans-serif;
+
+}
+
+nav .nav-search input:focus {
+    outline: none;
+}
+
+/*straighten things out */
+@media only screen and (max-width: 950px) {
+    nav {
+        justify-content: space-between;
+    }
+
+}
+
+/*remove the search bar when it gets too small */
+@media only screen and (max-width: 500px) {
+    nav .nav-search {
+        display: none;
+    }
+}
+
+.profile-section {
+    /* border: 3px solid gold; */
+    font-family: 'Rubik', sans-serif;
+    padding: 7vh 0 0 0;
+    display: flex;
+    justify-content: center;
+
+}
+
+.profile-section .top {
+    /* border: 3px solid seagreen; */
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+}
+
+.profile-section .top .wrapper{
+    /* border: 3px solid violet; */
+    display: flex;
+
+}
+
+.profile-section .top img {
+    border-radius: 50%;
+}
+
+.profile-section .top .text{
+    display: flex;
+    flex-direction: column;
+    /* border: 3px solid royalblue; */
+
+}
+
+.profile-section .top .text .first-row {
+    /* border: 1px solid red; */
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    height: fit-content;
+}
+
+.profile-section .top .text .first-row p{
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.profile-section .top .text .first-row i {
+    font-size: 23px;
+    color: #262626;
+    cursor: pointer;
+}
+
+.greyed-btn{
+    font-size: 20px;
+    /* border: 1px solid #dbdbdb; */
+    height: fit-content;
+    font-size: 14px;
+    text-decoration: none;
+    color: #262626;
+    padding: 5px 9px 5px 9px;
+    border-radius: 4px;
+}
+
+.profile-section .top .text .second-row {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.profile-section .top .text .last-row {
+    font-size: 14px;
+    padding: 10px 0 10px 15px;
+}
+
+.balance {
+    height: 30px;
+    width: 350px;
+    /* border: 3px solid thistle; */
+}

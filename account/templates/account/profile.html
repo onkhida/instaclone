@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--CUSTOM CSS-->
+    <link rel="stylesheet" href="{% static 'css/profile-styles.css' %}">
+
+    <!--Just for the site window logo-->
+    <link rel="icon" href="{% static 'css/logo.png' %}">
+
+    <!--Cookie and Rubik google font for IG typeface-->
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Rubik&display=swap" rel="stylesheet">
+
+
+    <!--Font Awesome typeface-->
+    <script src="https://use.fontawesome.com/71b32705a1.js"></script>
+
+    <title>Instagram</title>
+</head>
+<body>
+    <nav>
+        <div class="site-logo">
+            <h1>Instagram</h1>
+        </div>
+
+        <div class="nav-search">
+            <input 
+                type="text" 
+                name="search" 
+                id="search" 
+                placeholder="search"
+            >
+        </div>
+
+        <div class="nav-links">
+            <ul>
+                <li
+                    {% if section == "feed" %} 
+                        class="active-section"
+                    {% endif %}
+                >
+                    <img src="{% static 'img/home.svg' %}" alt="Home">
+                </li>
+
+                <li
+                    {% if section == "direct" %} 
+                        class="active-section"
+                    {% endif %}
+                >
+                    <img src="{% static 'img/send.svg' %}" alt="Direct">
+                </li>
+
+                <li
+                    {% if section == "explore" %} 
+                        class="active-section"
+                    {% endif %}
+                >
+                    <img src="{% static 'img/explore.svg' %}" alt="Explore">
+                </li>
+
+                <li
+                    {% if section == "upload" %} 
+                        class="active-section"
+                    {% endif %}
+                >
+                    <img src="{% static 'img/upload.svg' %}" alt="Upload">
+                </li>
+
+                <li
+                    {% if section == "activity" %} 
+                        class="active-section"
+                    {% endif %}
+                >
+                    <img src="{% static 'img/heart.svg' %}" alt="Activity">
+                </li>
+
+                <li
+                    {% if section == "profile" %} 
+                        class="active-section"
+                    {% endif %}
+                >
+                    <img src="{% static 'img/profile.svg' %}" alt="Profile">
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <section class="profile-section">
+        <div class="top">
+            <div class="wrapper">
+                <img src="{{ profile.profile_picture.url }}" alt="daniel.eta">
+            </div>
+            <div class="text">
+                <div class="first-row">
+                    <p>{{ request.user.username }}</p>
+                    <a href="#" class="greyed-btn">
+                        <b>Edit Profile</b>
+                    </a>
+                    <i class="fa fa-cog"></i>
+                </div>
+
+                <div class="second-row">
+                    <p>
+                        <b>{{ request.user.posts.count }}</b>
+                        posts
+                    </p>
+
+                    <p>
+                        <b>{{ profile.followers.count }}</b>
+                        followers
+                    </p>
+
+                    <p>
+                        <b>{{ profile.following.count }}</b>
+                        following
+                    </p>
+                </div>
+
+                <div class="last-row">
+                    <p><b>{{ request.user.first_namea }}</b></p>
+                    <p>
+                        {% if profile.bio %}{{ profile.bio }}{% else %}{% endif %} </p>
+                    <a href="#">{% if profile.website %}{{ profile.website }}{% else %} {% endif %}</a>
+                </div>
+            </div>
+
+            <div class="balance">
+                <!--patch fix-->
+            </div>
+        </div>
+
+        <div class="bottom">
+            <div class="menu-bar">
+                
+            </div>
+        </div>
+
+
+    </section>
+</body>
+</html>
