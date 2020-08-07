@@ -31,6 +31,12 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+
+    # custom apps
+    'posts.apps.PostsConfig',
+    'account.apps.AccountConfig',
+
+    #built-in apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,9 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # custom apps
-    'posts.apps.PostsConfig',
-    'account.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [

@@ -17,11 +17,10 @@ class Profile(models.Model):
     user = models.OneToOneField(User, 
                                 on_delete=models.CASCADE,
                                 related_name='profiles')
-
     bio = models.TextField(blank=True, null=True)
     website = models.URLField(blank=True, null=True)
     gender = models.TextField()
-    profile_picture = models.ImageField(upload_to='profile_pics/%Y/%m/%d/')
+    profile_picture = models.ImageField(upload_to='profile_pics/%Y/%m/%d/', default='default.png')
     followers = models.ManyToManyField(User,
                                        blank=True,
                                        null=True,

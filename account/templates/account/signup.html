@@ -35,10 +35,10 @@
             
             {% if form.errors %}
                 <small style="color: red; font-size: 10px;">
-                    Your username and password did not match
+                    form.errors
                 </small>
             {% endif %}
-            <form action="{% url 'login' %}" method="post">
+            <form method="post">
                 <fieldset class="form-fieldset">
             
                     <legend class="form-legend">
@@ -57,11 +57,11 @@
                     {% endfor %}
 
                     <div class="form-margin">
-                        <input type="submit" class="btn-light" value="Log In">
+                        <input type="submit" class="btn-light" value="Sign Up">
                     </div>
 
                     <div class="sign-up">
-                        <small>Or sign up <a class="signup-link" href="{% url 'signup' %}">here</a></small>
+                        <small>Or log in <a class="signup-link" href="{% url 'login' %}">here</a></small>
                     </div>
                 </fieldset>
 
